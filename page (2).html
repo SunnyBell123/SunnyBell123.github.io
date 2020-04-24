@@ -1,0 +1,170 @@
+<!--用div呈现的个人主页大致框架-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>personal page</title>
+  <style type="text/css">
+  <!--
+   .div1{background: url(./resource/美队.jpg);background-size: 100% 100%;}
+   .div2{background:url(./resource/宇宙4.jpg);background-size: 100% 100%;}
+   .div3{background: url(./resource/炫酷.gif); background-size: 100% 100%;text-align: center;}
+   .p2{color: #0080ff;font-size: 16px;font-family:华文细黑;}
+   .p3{color: #fafafa;font-size: 30px;font-family: 华文细黑；font-weight:bolder;letter-spacing: 5px;font-style: italic;text-shadow: 0px 1px 0px #999,0px 2px 0px #888;}
+   .ul{list-style-type:none;}
+   .li{font-size: 45px;margin-left:40px;margin-bottom: 60px;margin-top:80px;font-family: 华文新魏;border:solid;border-color: white;padding-left: 75px;}
+   .li2{font-size:40px;margin-left: 40px;border:dashed;border-color: white;padding-left: 75px;}
+   .l{text-decoration: none;color: #00ffff;}
+   .a{text-decoration: none;color: #9393ff;}
+    a:hover{color: purple;}
+   .img2{width:120px;height: 80px; margin-top:-18px;float: left;z-index:1;}
+   .span4{padding-left: 150px;}
+
+
+    * { 
+        margin:0; 
+        padding:0; 
+      } 
+       a{ 
+        text-decoration: none; 
+      } 
+       .container { 
+        position: relative; 
+        width: 600px; height: 400px; 
+        margin:20px auto 0 auto; 
+        box-shadow: 0 0 15px #538688; 
+        overflow: hidden; 
+      } 
+       .container .wrap { position: absolute; width: 4200px; height: 400px; z-index: 1; } 
+       .container .wrap img { float: left; width: 600px; height: 400px; } 
+       .container .buttons { position: absolute; right: 5px; bottom:40px; width: 150px; height: 10px; z-index: 2; } 
+       .container .buttons span { margin-left: 5px; display: inline-block; width: 20px; height: 20px; border-radius: 50%; background-color: gray; text-align: center; color:white; cursor: pointer; } 
+       .container .buttons span.on{ background-color: yellow;} 
+       .container .arrow { position: absolute; top: 35%; color: green; padding:0px 14px; border-radius: 50%; font-size: 50px; z-index: 2; display: none; } 
+       .container .arrow_left { left: 10px; } 
+       .container .arrow_right { right: 10px; } 
+       .container:hover .arrow { display: block; } 
+       .container .arrow:hover { background-color: rgba(0,0,0,0.2); }   
+  -->
+  </style>
+</head>
+  <body bgcolor="black">
+  <div style="position: absolute;z-index: 0;width: 1530px;height: 745px;" class="div1">
+      <div style="position: absolute;z-index: 2;width: 400px;height:240px;top: 60px;">
+        <img src="./resource/钢铁侠3.jpg" class="img2">
+        <p class="p2">
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp世界上只有一种英雄主义，那就是了解生活的残酷却任然热爱生活。<br>
+        <span class="span4">----罗曼.罗兰</span>
+        </p><hr color="gray">
+      </div>
+    <div style="position: absolute;z-index:2;width:380px;height: 550px;top:120px;float: bottom;">
+       <ul type="circle" class="ul">
+          <li class="li"><a href="movies.html" class="a" target="movies" title="about My movies" >我的电影</a></li>
+          <li class="li"><a href="my travel.html" class="a" title="带上灵魂去旅行">我的旅行</a></li>
+          <li class="li"><a href="mysic.html" class="a" target="mysic">我的音乐</a></li> 
+          <li class="li2"><a href="main page.html" class="l">返回首页</a></li>
+       </ul>
+    </div>
+    <div style="position: absolute;z-index: 2;width: 1000px;height: 150px;left: 500px;top:10px" class="div3">
+       <h2 class="p3">Colorful And Various Lifestyes!!!</h2><br><br>
+       <h2 class="p3">丰富多彩的生活!!!</h2>
+    </div>                                                        <!--title-->
+    <div style="position:absolute;z-index: 2;width: 1000px;height: 520px;right: 30px;top: 160px;" class="div2">
+       
+       <div class="container"> <div class="wrap" style="left: -600px;"> 
+         <img src="./img/5.jpg" alt=""> 
+         <img src="./img/1.jpg" alt=""> 
+         <img src="./img/2.jpg" alt=""> 
+         <img src="./img/3.jpg" alt=""> 
+         <img src="./img/4.jpg" alt=""> 
+         <img src="./img/5.jpg" alt=""> 
+         <img src="./img/1.jpg" alt=""> 
+       </div> 
+       <div class="buttons"> 
+         <span class="on">1</span> 
+         <span>2</span> 
+         <span>3</span> 
+         <span>4</span> 
+         <span>5</span> 
+       </div> 
+       <a href="javascript:;" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" class="arrow arrow_left"></a> 
+       <a href="javascript:;" rel="external nofollow" rel="external nofollow" rel="external nofollow" rel="external nofollow" class="arrow arrow_right"></a>  
+    <script> 
+    var wrap = document.querySelector(".wrap"); 
+    var next = document.querySelector(".arrow_right"); 
+    var prev = document.querySelector(".arrow_left"); 
+      next.onclick = function () { 
+        next_pic(); 
+        } 
+        prev.onclick = function () { 
+          prev_pic(); 
+          } 
+          function next_pic () { 
+            index++; if(index > 4){ 
+              index = 0; 
+              } 
+              showCurrentDot(); 
+              var newLeft; 
+              if(wrap.style.left === "-3600px"){ 
+                newLeft = -1200; 
+                }else{ 
+                  newLeft = parseInt(wrap.style.left)-600; 
+                  } 
+                  wrap.style.left = newLeft + "px"; 
+                  } 
+                  function prev_pic () { 
+                    index--; if(index < 0){ 
+                      index = 4; 
+                      } 
+                      showCurrentDot(); 
+                      var newLeft; 
+                      if(wrap.style.left === "0px"){ 
+                        newLeft = -2400; 
+                        }else{ 
+                          newLeft = parseInt(wrap.style.left)+600; 
+                          } 
+                          wrap.style.left = newLeft + "px"; 
+                          } 
+                          var timer = null; 
+                          function autoPlay () { 
+                            timer = setInterval(function () { 
+                              next_pic(); 
+                              },3000); 
+                              } 
+                              autoPlay(); 
+                              var container = document.querySelector(".container"); 
+                              container.onmouseenter = function () { 
+                                clearInterval(timer); 
+                                } 
+                                container.onmouseleave = function () { 
+                                  autoPlay(); 
+                                  } 
+                                  var index = 0; 
+                                  var dots = document.getElementsByTagName("span"); 
+                                  function showCurrentDot () { 
+                                    for(var i = 0, len = dots.length; i < len; i++){ 
+                                      dots[i].className = ""; 
+                                      } 
+                                      dots[index].className = "on"; 
+                                      } 
+                                      for (var i = 0, len = dots.length; i < len; i++){ 
+                                        (function(i){ 
+                                          dots[i].onclick = function () { 
+                                            var dis = index - i; 
+                                            if(index == 4 && parseInt(wrap.style.left)!==-3000){ 
+                                              dis = dis - 5; 
+                                              }  
+                                              if(index == 0 && parseInt(wrap.style.left)!== -600){ 
+                                                dis = 5 + dis; 
+                                                } 
+                                                wrap.style.left = (parseInt(wrap.style.left) + dis * 600)+"px"; 
+                                                index = i; 
+                                                showCurrentDot(); 
+                                                } 
+                                                })(i); 
+                                                } 
+    </script> 
+    </div>
+  </div> 
+  </body>
+</html>
